@@ -1,0 +1,9 @@
+public class ShortStringExceptionTest {
+    public ShortStringExceptionTest() {
+    }
+
+    @Test
+    public void shortStringExceptionTest() {
+        System.out.println(SimHashUtils.getSimHash("一位正真的作家"));
+    }
+}
