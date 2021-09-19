@@ -1,0 +1,27 @@
+public class SimHashUtilsTest {
+    public SimHashUtilsTest() {
+    }
+
+    @Test
+    public void getHashTest() {
+        String[] strings = new String[]{"余华", "是", "一位", "真正", "的", "作家"};
+        String[] var2 = strings;
+        int var3 = strings.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            String string = var2[var4];
+            String stringHash = SimHashUtils.getHash(string);
+            System.out.println(stringHash.length());
+            System.out.println(stringHash);
+        }
+
+    }
+
+    @Test
+    public void getSimHashTest() {
+        String str0 = TxtIOUtils.readTxt("D:/test/orig.txt");
+        String str1 = TxtIOUtils.readTxt("D:/test/orig_0.8_add.txt");
+        System.out.println(SimHashUtils.getSimHash(str0));
+        System.out.println(SimHashUtils.getSimHash(str1));
+    }
+}
