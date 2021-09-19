@@ -1,0 +1,43 @@
+public class TxtIOUtilsTest {
+    public TxtIOUtilsTest() {
+    }
+
+    @Test
+    public void readTxtTest() {
+        String str = TxtIOUtils.readTxt("D:/test/orig.txt");
+        String[] strings = str.split(" ");
+        String[] var3 = strings;
+        int var4 = strings.length;
+
+        for(int var5 = 0; var5 < var4; ++var5) {
+            String string = var3[var5];
+            System.out.println(string);
+        }
+
+    }
+
+    @Test
+    public void writeTxtTest() {
+        double[] elem = new double[]{0.11D, 0.22D, 0.33D, 0.44D, 0.55D};
+
+        for(int i = 0; i < elem.length; ++i) {
+            TxtIOUtils.writeTxt(elem[i], "D:/test/ans.txt");
+        }
+
+    }
+
+    @Test
+    public void readTxtFailTest() {
+        String str = TxtIOUtils.readTxt("D:/test/none.txt");
+    }
+
+    @Test
+    public void writeTxtFailTest() {
+        double[] elem = new double[]{0.11D, 0.22D, 0.33D, 0.44D, 0.55D};
+
+        for(int i = 0; i < elem.length; ++i) {
+            TxtIOUtils.writeTxt(elem[i], "User:/test/ans.txt");
+        }
+
+    }
+}
